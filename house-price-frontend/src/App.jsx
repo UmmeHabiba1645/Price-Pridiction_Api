@@ -121,7 +121,7 @@
 
 // export default App
 import { useState } from "react";
-import { predictPrice } from "./api";
+import { predictPrice } from "./Api";
 
 function App() {
   const [formData, setFormData] = useState({
