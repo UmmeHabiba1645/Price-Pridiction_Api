@@ -3,7 +3,14 @@ from flask_cors import CORS
 import joblib
 import pandas as pd
 import os
+from fastapi.middleware.cors import CORSMiddleware
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "https://your-production-frontend.com"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 saved = joblib.load('house_price_model.pkl')
 model = saved['model']
 location_avg = saved['location_avg']
